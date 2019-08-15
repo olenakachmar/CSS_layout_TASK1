@@ -1,0 +1,17 @@
+@mixin background-pos {
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+@mixin flex-justify-content {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin text-font-transform-align-weight {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}

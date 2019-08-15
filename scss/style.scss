@@ -1,0 +1,207 @@
+@import 'mixins.scss', 'variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+header {
+  background: url('../assets/background.png');
+  height: 100vh;
+  @include background-pos;
+  @include flex-justify-content;
+  flex-direction: column;
+  align-items: center;
+
+  .logo img {
+    width: 45px;
+    height: 49px;
+    margin-bottom: 20px;
+  }
+
+  .additional-info {
+    color: $white-color;
+    @include text-font-transform-align-weight;
+    letter-spacing: 7px;
+    line-height: 3.5rem;
+    margin: 20px;
+  }
+
+  section {
+    color: $white-color;
+    @include text-font-transform-align-weight;
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.9px;
+    margin: 0 20px 0 20px;
+  }
+
+  .mouse img {
+    height: 20px;
+    width: 15px;
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .wrapper-with-picture {
+    background: url(../assets/background-for-services.png);
+    @include background-pos;
+    width: 100%;
+    @include flex-justify-content;
+  }
+
+  .module {
+    margin: 90px 20px 90px 20px;
+    border-radius: 3px;
+    padding: 30px 0 20px;
+    position: relative;
+    border-right: $border-black;
+    border-bottom: $border-black;
+    border-left: $border-black;
+
+    .module-top {
+      display: flex;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &:before {
+        border-radius: 2px 0 0 0;
+        display: block;
+        content: "";
+        flex: 2 0 0;
+        height: 1px;
+        border-top: 2px solid $black-color;
+      }
+
+      &:after {
+        border-radius: 0 2px 0 0;
+        display: block;
+        content: "";
+        flex: 2 0 0;
+        height: 1px;
+        border-top: 2px solid $black-color;
+      }
+
+      .top-content {
+        color: $black-color;
+        @include text-font-transform-align-weight;
+        flex: 0 10 300px;
+        margin-top: -10px;
+        font-size: 20px;
+        letter-spacing: 5px;
+      }
+
+      .white-text-color {
+        color: $white-color;
+      }
+    }
+
+    .module-contents {
+      line-height: 24px;
+      color: $black-color;
+      text-align: center;
+
+      p {
+        margin: 20px 40px 20px 40px;
+      }
+    }
+
+    .white-text-color {
+      color: $white-color;
+    }
+
+  }
+
+  .border-white {
+    border-right: $border-white;
+    border-bottom: $border-white;
+    border-left: $border-white;
+
+    .module-top {
+      &:before {
+        border-top: 2px solid $white-color;
+      }
+
+      &:after {
+        border-top: 2px solid $white-color;
+      }
+    }
+  }
+
+  .what-we-do-images img {
+    margin: 40px 0 20px 0;
+    width: 50px;
+  }
+
+  .what-we-do-title {
+    @include text-font-transform-align-weight;
+    font-size: 1rem;
+    letter-spacing: 6px;
+  }
+
+  .images-menu {
+    display: grid;
+    row-gap: 10px;
+    .image {
+      position: relative;
+      width: 100%;
+      height: 140px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    p {
+      @include text-font-transform-align-weight;
+      color: $white-color;
+      position: absolute;
+      padding: 10px;
+      bottom: 8px;
+      left: 16px;
+      letter-spacing: 3px;
+    }
+  }
+
+  button {
+    width: 250px;
+    height: 40px;
+    border: 2px solid $black-color;
+    background-color: $black-color;
+    color: $white-color;
+    margin-bottom: 20px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: #6f6f6f;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  font-size: 10px;
+
+  img {
+    height: 20px;
+    width: 30px;
+    padding-right: 10px;
+    margin-top: -5px;
+  }
+}
+
+@import 'media-min-300.scss', 'media-min-500.scss', 'media-min-700.scss';
